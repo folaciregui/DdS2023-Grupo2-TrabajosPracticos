@@ -1,0 +1,44 @@
+html, body {
+	background-color: white;
+    height: 100%;
+	width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title{
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+	text-align: center;
+	margin-bottom: 20px;
+	color: #8341a2;
+}
+
+form {
+	background-color: #ffffff3a;
+	padding: 30px;
+	border-radius: 5px;
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+.form-group label {
+	font-weight: bold;
+}
+
+.form-control {
+	border-radius: 0px;
+	border-color: #8341a2;
+}
+
+.btn-dark{
+	background-color: #8341a2;
+	border-color: #8341a2;
+	border-radius: 0px;
+}
+
+.btn-dark-overr:hover {
+	background-color: #8341a2;
+	border-color: #8341a2;
+}
