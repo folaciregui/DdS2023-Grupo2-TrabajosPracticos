@@ -17,7 +17,7 @@ public class DemoFinal {
 //        try {
             Corredor marcos = new Corredor();
             //Insert
-            em.persist(marcos);
+
 //        } catch (Exception e) {
 //            BDUtils.rollback(em);
 //            return;
@@ -29,26 +29,33 @@ public class DemoFinal {
         marcos.setDni(44444444);
         marcos.setPesoCorredor(80);
         marcos.setVerificado(Boolean.TRUE);
+        em.persist(marcos);
         System.out.println("ID MARCOS: " + marcos.getId());
 
-        Tecnico fabiano = new Tecnico();
         //Insert
-        em.persist(fabiano);
+        Corredor fabiano = new Corredor();
+        //Insert
+
 //        } catch (Exception e) {
 //            BDUtils.rollback(em);
 //            return;
 //        }
 
         //Update
-        fabiano.setNombre("Marcos"); //Entidad administrada -> detecta cambios
-        fabiano.setApellido("Fernandez");
+        fabiano.setNombre("Fabiano"); //Entidad administrada -> detecta cambios
+        fabiano.setApellido("Caruana");
         fabiano.setDni(44444444);
         fabiano.setPesoCorredor(80);
         fabiano.setVerificado(Boolean.TRUE);
-        Certificado diploma = new Certificado ();
-        diploma.setNombre("diploma unico utn");
-        fabiano.setCertificados(asList(diploma));
-        System.out.println("ID FABIANO: " + fabiano.getId());
+        em.persist(fabiano);
+        System.out.println("ID Fabiano: " + fabiano.getId());
+
+//        } catch (Exception e) {
+//            BDUtils.rollback(em);
+//            return;
+//        }
+
+        //Update
     //      em.persist(fabiano);
         //JPQL Query
         List<Persona> personas = em

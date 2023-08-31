@@ -3,10 +3,13 @@ package com.example.hibernate.dominio;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import java.time.LocalDateTime;
 
 @Entity
 public class Certificado {
+    @ManyToOne
+    private Tecnico tecnico;
     @Column
     private LocalDateTime fecha;
     @Column
