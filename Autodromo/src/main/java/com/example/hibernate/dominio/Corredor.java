@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
-public class Corredor extends Persona {
+public class Corredor extends UsuarioGeneral {
     public Corredor(Long id, Integer dni, String apellido, String nombre, LocalDateTime fechaDeNacimiento, Integer pesoCorredor, Boolean verificado, TipoDocumento tipoDocumento) {
         super(id, dni, apellido, nombre, fechaDeNacimiento, pesoCorredor, verificado, tipoDocumento);
     }

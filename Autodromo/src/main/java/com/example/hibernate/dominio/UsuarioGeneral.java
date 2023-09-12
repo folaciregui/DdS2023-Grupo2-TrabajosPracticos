@@ -6,66 +6,45 @@ import java.time.LocalDateTime;
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 //@Table(name = "persona") //opcional
-public class Persona {
+public class UsuarioGeneral {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name="dni")
-    private Integer dni;
+    @Column(name="correoElectronico")
+    private String correoElectonico;
     @Column(name="apellido")
     private String apellido;
     @Column(name="nombre")
     private String nombre;
-    @Column(name="fechaDeNacimiento")
-    private LocalDateTime fechaDeNacimiento;
+    @OneToOne
+    @Column(name="cuenta")
+    private Cuenta cuenta;
 
-    @Column(name="pesoCorredor")
-    private Integer pesoCorredor;
+    @Column(name="tipoNotificacion")
+    private String tipoNotificacion;
+    @Column(name="frecuenciaNotificacion")
+    private String frecuenciaNotificacion;
 
+    @OneToOne
+    @Column(name="empresaPrestadora")
+    private Organizacion empresaInteres;
     @Column(name="verificado")
     private Boolean verificado;
 
     @Enumerated(EnumType.STRING) //Opcional. Por default, lo persiste como int
     private TipoDocumento tipoDocumento;
 
-    public Persona(Long id, Integer dni, String apellido, String nombre, LocalDateTime fechaDeNacimiento, Integer pesoCorredor, Boolean verificado, TipoDocumento tipoDocumento) {
+    public UsuarioGeneral(Long id, Integer dni, String apellido, String nombre, LocalDateTime fechaDeNacimiento, Integer pesoCorredor, Boolean verificado, TipoDocumento tipoDocumento) {
         this.id = id;
-        this.dni = dni;
         this.apellido = apellido;
         this.nombre = nombre;
-        this.fechaDeNacimiento = fechaDeNacimiento;
-        this.pesoCorredor = pesoCorredor;
         this.verificado = verificado;
         this.tipoDocumento = tipoDocumento;
     }
 
-    public Persona() {
+    public UsuarioGeneral() {
 
-    }
-
-    public Integer getDni() {
-        return dni;
-    }
-
-    public void setDni(Integer dni) {
-        this.dni = dni;
-    }
-
-    public LocalDateTime getFechaDeNacimiento() {
-        return fechaDeNacimiento;
-    }
-
-    public void setFechaDeNacimiento(LocalDateTime fechaDeNacimiento) {
-        this.fechaDeNacimiento = fechaDeNacimiento;
-    }
-
-    public Integer getPesoCorredor() {
-        return pesoCorredor;
-    }
-
-    public void setPesoCorredor(Integer pesoCorredor) {
-        this.pesoCorredor = pesoCorredor;
     }
 
     public Boolean getVerificado() {

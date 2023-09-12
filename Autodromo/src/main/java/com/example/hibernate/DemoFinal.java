@@ -58,16 +58,16 @@ public class DemoFinal {
         //Update
     //      em.persist(fabiano);
         //JPQL Query
-        List<Persona> personas = em
+        List<UsuarioGeneral> personas = em
                 // equivalente a: select * from persona where persona.nombre = 'Julian'
-                .createQuery("select p from Persona p where p.nombre = ?1", Persona.class) //ojo, query no tipada
+                .createQuery("select p from UsuarioGeneral p where p.nombre = ?1", UsuarioGeneral.class) //ojo, query no tipada
                 .setParameter(1, "Fabiano")
                 .getResultList();
 
         System.out.println(personas);
 
         //Delete
-        for (Persona persona : personas) {
+        for (UsuarioGeneral persona : personas) {
             em.remove(persona);
         }
 
